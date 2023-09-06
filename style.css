@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Crimson Text', serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("j.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;  
+}
+
+.container{
+    width: 400px;
+    height: 500px;
+    perspective: 1500px;
+    display: flex;
+}
+
+#chk{
+    display: none;
+}
+
+#chk:checked ~ .content{
+    animation: 2s alternate;
+    transform: rotateY(180deg);
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 25px #e7a30f;
+    transition: transform 1s cubic-bezier(0.75, 0, 0.85, 1);
+}
+
+.front, .rear{
+    position: absolute;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+}
+
+.rear{
+    transform: rotateY(180deg);
+}
+
+.container .front{
+    margin-right: 25px;
+    padding: 0;
+    display: flex;
+    background: transparent;
+    backdrop-filter: blur(12px);
+    width: 400px;
+    height: 500px;
+    flex-direction: column;
+}
+
+.container .front .btns{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .front .btns .row{
+    display: flex;
+    flex-direction: row;
+}
+
+.container .front .btns .row .r{
+    display: flex;
+    text-align: center;
+    width: 100px;
+    height: 67px;
+    border-radius: 25px;
+    background: transparent;
+}
+
+.container .front .btns .row .r button{
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+}
+.container .front .btns .row .r label{
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    padding-top: 18px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+}
+
+.container .front .btns .row .r label:hover{
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffffff, inset 0 0 12px #ffffff;
+}
+
+.container .front .btns .row .r button:hover{
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffffff, inset 0 0 12px #ffffff;
+}
+
+.container .front .Calculator{
+    display: flex;
+    width: 380px;
+    height: 80px;
+    margin: 8px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.container .front .Calculator #screen{
+    margin: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: 1000;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+}
+
+.container .rear{
+    margin-right: 25px;
+    padding: 0;
+    display: flex;
+    background: transparent;
+    backdrop-filter: blur(12px);
+    width: 400px;
+    height: 500px;
+    flex-direction: column;
+}
+
+.container .rear .btns{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .rear .btns .row{
+    display: flex;
+    flex-direction: row;
+}
+
+.container .rear .btns .row .r{
+    display: flex;
+    text-align: center;
+    width: 80px;
+    height: 67px;
+    background: transparent;
+}
+
+.container .rear .btns .row .r button{
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+}
+
+.container .rear .btns .row .r button:hover{
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffffff, inset 0 0 12px #ffffff;
+}
+
+.container .rear .btns .row .r label{
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    border: none;
+    padding-top: 18px;
+    outline: none;
+    width: 100%;
+    background: transparent;
+}
+
+.container .rear .btns .row .r label:hover{
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffffff, inset 0 0 12px #ffffff;
+}
+
+.container .rear .Calculator{
+    display: flex;
+    border-radius: 15px;
+    width: 380px;
+    height: 80px;
+    margin: 8px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.container .rear .Calculator #screen2{
+    margin: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: 1000;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+}
+
+@media (max-width: 500px) {
+    .container{
+        width: 350px;
+    }
+    
+    .container .front{
+        width: 350px;
+    }
+
+    .container .front .btns .row .r{
+        width: 87.5px;
+    }
+
+    .container .rear{
+        width: 350px;
+    }
+
+    .container .rear .btns .row .r{
+        width: 70px;
+    }
+
+    .container .rear .Calculator{
+        width: 330px;
+    }
+
+    .container .front .Calculator{
+        width: 330px;
+    }
+}
